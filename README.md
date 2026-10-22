@@ -1,16 +1,47 @@
-# React + Vite
+# Explorador de películas
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Práctica de Evaluación Continua 2 de *Diseño y despliegue de aplicaciones multiplataforma* (UCJC).
 
-Currently, two official plugins are available:
+Aplicación web hecha con React que consume la API de [The Movie Database (TMDB)](https://www.themoviedb.org/). Permite ver las películas populares, buscar por título y guardar una lista de favoritos que se conserva entre sesiones.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades
 
-## React Compiler
+- Página principal con las películas populares, búsqueda por título, indicador de carga y mensaje de error.
+- Favoritos: botón de corazón en cada tarjeta (al pasar el ratón) y página dedicada con todas las favoritas.
+- Los favoritos se guardan en `localStorage`.
+- Barra de navegación fija con React Router (`/` y `/favorites`).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologías
 
-## Expanding the Oxlint configuration
+React, Vite, React Router, Context API y la API de TMDB.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Cómo ejecutarla
+
+1. Instalar las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+2. Crear un archivo `.env` en la raíz con tu API Key de TMDB (se consigue gratis en https://www.themoviedb.org/settings/api):
+
+   ```
+   VITE_TMDB_API_KEY=tu_clave
+   ```
+
+3. Arrancar la aplicación:
+
+   ```bash
+   npm run dev
+   ```
+
+## Estructura
+
+```
+src/
+├── components/   NavBar y MovieCard
+├── contexts/     MovieContext (favoritos)
+├── pages/        Home y Favorites
+├── App.jsx       Rutas y provider del contexto
+└── main.jsx
+```

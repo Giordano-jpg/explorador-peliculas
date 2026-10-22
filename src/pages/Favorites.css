@@ -1,0 +1,8 @@
+.favorites h1 {
+  margin: 0 0 1.5rem;
+}
+
+.favorites-empty {
+  text-align: center;
+  color: #999;
+}
